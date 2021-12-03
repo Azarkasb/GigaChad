@@ -1,2 +1,2 @@
 # GigaChad
-Giga Chad Official Telegram Account
+Giga Chad Official Telegram Account!
