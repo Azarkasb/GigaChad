@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from plugins import admins, myConnector, myCommands
+from plugins import gigaChad, admins, myConnector, myCommands
 
 
 # Say Hi and report important data from the DB

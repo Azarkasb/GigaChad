@@ -15,6 +15,9 @@ admins = []
 for admin in config['admins']:
     admins.append(int(config['admins'][admin]))
 
+# Recognizing our gigaChad cli account
+gigaChad = int(config['gigachad']['ID'])
+
 # Connecting to DB
 myConnector = mysql.connector.connect(
     host=DBdata['hostname'],
@@ -23,3 +26,6 @@ myConnector = mysql.connector.connect(
     database=DBdata['database']
 )
 myCommands = myConnector.cursor()
+
+# GigaChad response to TeraChad Handler
+response = {'currentAdmin': 'noBody', 'join': 0, 'leave': 0}
