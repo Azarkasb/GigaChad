@@ -1,11 +1,12 @@
 from pyrogram import Client, filters
+from pyrogram.types import Message
 from plugins import gigaChad, admins, myConnector, myCommands, response
-giGaChad = int(gigaChad)
 
 
 # Command /chats for receiving chats list
 @Client.on_message(filters.user(admins) & filters.command('chats'))
 def show(client: Client, message):
+    myConnector.commit()
     sql = 'SELECT * FROM chats'
     myCommands.execute(sql)
     myResults = myCommands.fetchall()
@@ -41,8 +42,22 @@ async def join(client, message):
     response['currentAdmin'] = message.chat.id
 
 
-# Geting response of +join from gigachad
+# Getting response of +join from gigachad
 async def response_join(client: Client, message):
+    await client.send_message(response['currentAdmin'], message.text)
+
+
+# Command /leave for leaving a chat
+@Client.on_message(filters.user(admins) & filters.command('leave'))
+async def leave(client, message):
+    target_chat_id = message.command[-1]
+    await client.send_message(gigaChad, f'+leave {target_chat_id}')
+    response['leave'] = 1
+    response['currentAdmin'] = message.chat.id
+
+
+# Getting response of +leave from gigachad
+async def response_leave(client: Client, message: Message):
     await client.send_message(response['currentAdmin'], message.text)
 
 
@@ -52,3 +67,6 @@ async def handling_gigachad_response(client, message):
     if response['join']:
         await response_join(client, message)
         response['join'] = 0
+    elif response['leave']:
+        await response_leave(client, message)
+        response['leave'] = 0
