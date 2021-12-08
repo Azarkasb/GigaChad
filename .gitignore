@@ -129,7 +129,9 @@ dmypy.json
 .pyre/
 
 # my New ignores
+.idea
 *.ini
 *.session
 *.session-journal
 Assets/
+ExaChad/
