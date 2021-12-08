@@ -12,6 +12,7 @@ DBdata = {
 }
 admins = []
 apiAdmin = config['apiadmin']['api_admin']
+longTextLength = int(config['gigachad']['longTextLength'])
 
 # Connecting to DB
 myConnector = mysql.connector.connect(
@@ -21,3 +22,13 @@ myConnector = mysql.connector.connect(
     database=DBdata['database']
 )
 myCommands = myConnector.cursor()
+
+# Defining Giga Words
+gigaWords = {'message': [
+    'نخوندم',
+    'نشنیدم',
+    'ندیدم',
+    'نفهمیدم',
+    'نیستم',
+    'نگرفتم',
+]}
