@@ -130,8 +130,8 @@ dmypy.json
 
 # my New ignores
 .idea
-*.ini
-*.session
+## *.ini
+## *.session
 *.session-journal
 Assets/
 ExaChad/
