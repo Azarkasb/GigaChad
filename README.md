@@ -62,6 +62,7 @@ ID = your_client_id
 ```
 
 ## Run
+
 1.`git clone https://github.com/Azarkasb/GigaChad.git` to download the source code.
 2. `cd GigaChad`, to enter the directory.
 3. `python -m venv venv && . venv/bin/activate` to create and activate a virtual environment.
