@@ -70,3 +70,7 @@ ID = your_client_id
 5. create `giga.ini`,`tera.ini` in GigaChad and TeraChad directory
 6. Run `giga.py` and `tera.py` in two different cmd
 7. enjoy
+
+## License
+
+MIT © 2019-present [Azarkasb](//github.com/Azarkasb)
