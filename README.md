@@ -73,4 +73,4 @@ ID = your_client_id
 
 ## License
 
-MIT © 2019-present [Azarkasb](//github.com/Azarkasb)
+MIT © 2021-present [Azarkasb](//github.com/Azarkasb)
